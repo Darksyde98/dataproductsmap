@@ -1,0 +1,38 @@
+---
+title: "Some Danish Breweries"
+author: "Anders Molven Larsen"
+date: "11 December 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(leaflet)
+```
+
+```{r}
+brewerLatLong <- data.frame(
+        lat = c(55.6668862, 55.7628471, 55.8483285, 55.6176869, 55.6530893),
+        lng = c(12.5308066, 12.3816044,	12.4171578, 12.6193811, 12.2147613))
+```
+
+```{r}
+brewerpopup <- c(
+          "<a href='www.carlsberg.dk'>Carlsberg Breweries</a>",
+          "<a href='www.bryggeriskovlyst.dk'>Bryggeri Skovlyst</a>",
+          "<a href='www.birkebryg.dk'>Birkerød Bryg & Ølhus</a>",
+          "<a href='www.amagerbryghus.dk'>Amager Bryghus</a>",
+          "<a href='http://www.noerrebrobryghus.dk/'>Nørrebro Bryghus</a>")
+        
+```
+
+
+```{r}
+brewerLatLong %>%
+        leaflet() %>%
+        addTiles() %>%
+        addMarkers(popup = brewerpopup)
+```
