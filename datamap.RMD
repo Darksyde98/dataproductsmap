@@ -1,5 +1,5 @@
 ---
-title: "Some Danish Breweries"
+title: "Some Local Danish Breweries"
 author: "Anders Molven Larsen"
 date: "11 December 2017"
 output: html_document
